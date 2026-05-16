@@ -1,0 +1,149 @@
+ticket_id,account_id,subject,status,priority,created_date,resolved_date,days_open,category,satisfaction_score
+TKT001,ACC001,Issue #1 - How-To problem,Resolved,High,2026-04-14,2026-04-15,0,How-To,7.0
+TKT002,ACC001,Issue #2 - Technical problem,Resolved,High,2026-03-29,2026-03-31,0,Feature Request,7.0
+TKT003,ACC002,Issue #3 - Technical problem,Resolved,Low,2026-03-02,2026-03-04,0,Performance,6.0
+TKT004,ACC002,Issue #4 - Outage problem,Open,Low,2026-03-26,,50,Technical,
+TKT005,ACC004,Issue #5 - Billing problem,Resolved,High,2026-05-04,2026-05-06,0,Billing,9.0
+TKT006,ACC005,Issue #6 - How-To problem,Open,Medium,2026-03-25,,51,Technical,
+TKT007,ACC005,Issue #7 - Technical problem,Open,High,2026-03-05,,71,Technical,
+TKT008,ACC005,Issue #8 - Billing problem,Open,High,2026-03-10,,66,Churn Risk,
+TKT009,ACC005,Issue #9 - Performance problem,Resolved,Medium,2026-03-15,2026-03-16,0,Billing,2.0
+TKT010,ACC005,Issue #10 - Outage problem,Open,High,2026-04-05,,40,Product Gap,
+TKT011,ACC005,Issue #11 - Billing problem,Resolved,High,2026-03-04,2026-03-09,0,Billing,5.0
+TKT012,ACC005,Issue #12 - Product Gap problem,Open,Critical,2026-04-13,,32,Outage,
+TKT013,ACC006,Issue #13 - Product Gap problem,Open,Low,2026-03-20,,56,Outage,
+TKT014,ACC006,Issue #14 - Churn Risk problem,Open,Medium,2026-04-08,,37,Billing,
+TKT015,ACC006,Issue #15 - Billing problem,Open,Low,2026-04-29,,16,Outage,
+TKT016,ACC006,Issue #16 - Outage problem,Open,High,2026-04-24,,21,Billing,
+TKT017,ACC006,Issue #17 - Product Gap problem,Open,High,2026-03-19,,57,Technical,
+TKT018,ACC006,Issue #18 - How-To problem,Open,Medium,2026-04-04,,41,Performance,
+TKT019,ACC006,Issue #19 - Outage problem,Resolved,Medium,2026-03-10,2026-03-11,0,Billing,3.0
+TKT020,ACC007,Issue #20 - Technical problem,Open,Critical,2026-03-17,,59,Feature Request,
+TKT021,ACC007,Issue #21 - Outage problem,Resolved,Critical,2026-05-07,2026-05-10,0,Technical,2.0
+TKT022,ACC007,Issue #22 - Performance problem,Open,High,2026-04-22,,23,Technical,
+TKT023,ACC007,Issue #23 - Product Gap problem,Open,Medium,2026-04-29,,16,Churn Risk,
+TKT024,ACC007,Issue #24 - Billing problem,Resolved,High,2026-03-28,2026-03-31,0,Technical,2.0
+TKT025,ACC008,Issue #25 - Product Gap problem,Open,Medium,2026-05-04,,11,Churn Risk,
+TKT026,ACC008,Issue #26 - Billing problem,Open,Medium,2026-03-15,,61,Outage,
+TKT027,ACC008,Issue #27 - Feature Request problem,Resolved,High,2026-03-16,2026-03-21,0,Technical,2.0
+TKT028,ACC008,Issue #28 - How-To problem,Open,Low,2026-03-21,,55,Feature Request,
+TKT029,ACC008,Issue #29 - Feature Request problem,Open,High,2026-04-13,,32,Outage,
+TKT030,ACC010,Issue #30 - Product Gap problem,Open,Low,2026-03-08,,68,How-To,
+TKT031,ACC010,Issue #31 - Outage problem,Open,Medium,2026-03-07,,69,Billing,
+TKT032,ACC011,Issue #32 - Billing problem,Resolved,Low,2026-05-05,2026-05-09,0,Outage,10.0
+TKT033,ACC012,Issue #33 - Billing problem,Open,High,2026-03-20,,56,Product Gap,
+TKT034,ACC012,Issue #34 - Churn Risk problem,Open,Medium,2026-05-08,,7,Outage,
+TKT035,ACC012,Issue #35 - Product Gap problem,Open,Medium,2026-04-29,,16,Product Gap,
+TKT036,ACC012,Issue #36 - How-To problem,Resolved,High,2026-03-04,2026-03-07,0,Outage,2.0
+TKT037,ACC012,Issue #37 - How-To problem,Open,Medium,2026-05-01,,14,Outage,
+TKT038,ACC012,Issue #38 - Performance problem,Open,Critical,2026-03-27,,49,How-To,
+TKT039,ACC012,Issue #39 - Performance problem,Resolved,Medium,2026-04-27,2026-04-29,0,Billing,2.0
+TKT040,ACC013,Issue #40 - Churn Risk problem,Resolved,High,2026-03-08,2026-03-12,0,Outage,8.0
+TKT041,ACC013,Issue #41 - Churn Risk problem,Resolved,Low,2026-04-21,2026-04-25,0,Feature Request,8.0
+TKT042,ACC014,Issue #42 - Feature Request problem,Resolved,Medium,2026-05-03,2026-05-06,0,Churn Risk,9.0
+TKT043,ACC014,Issue #43 - Feature Request problem,Resolved,Medium,2026-05-06,2026-05-07,0,Billing,6.0
+TKT044,ACC015,Issue #44 - Technical problem,Resolved,Medium,2026-03-07,2026-03-11,0,Churn Risk,10.0
+TKT045,ACC015,Issue #45 - Performance problem,Resolved,Medium,2026-04-16,2026-04-19,0,Technical,9.0
+TKT046,ACC016,Issue #46 - Performance problem,Open,Low,2026-03-28,,48,Technical,
+TKT047,ACC016,Issue #47 - Performance problem,Open,Critical,2026-04-09,,36,Outage,
+TKT048,ACC017,Issue #48 - Technical problem,Open,High,2026-04-04,,41,Outage,
+TKT049,ACC017,Issue #49 - Product Gap problem,Open,Medium,2026-05-02,,13,Feature Request,
+TKT050,ACC017,Issue #50 - Performance problem,Open,Medium,2026-04-08,,37,Outage,
+TKT051,ACC018,Issue #51 - Product Gap problem,Open,Medium,2026-04-22,,23,Performance,
+TKT052,ACC018,Issue #52 - Outage problem,Open,Medium,2026-04-30,,15,Performance,
+TKT053,ACC018,Issue #53 - Technical problem,Resolved,High,2026-03-04,2026-03-08,0,Outage,3.0
+TKT054,ACC018,Issue #54 - Churn Risk problem,Open,Medium,2026-04-17,,28,How-To,
+TKT055,ACC021,Issue #55 - Technical problem,Resolved,Medium,2026-05-01,2026-05-02,0,Outage,10.0
+TKT056,ACC021,Issue #56 - Performance problem,Open,Low,2026-04-24,,21,Performance,
+TKT057,ACC022,Issue #57 - How-To problem,Resolved,Medium,2026-03-15,2026-03-18,0,Churn Risk,10.0
+TKT058,ACC022,Issue #58 - How-To problem,Open,High,2026-04-04,,41,How-To,
+TKT059,ACC022,Issue #59 - How-To problem,Open,High,2026-04-01,,44,Outage,
+TKT060,ACC022,Issue #60 - Product Gap problem,Open,Low,2026-03-15,,61,Product Gap,
+TKT061,ACC023,Issue #61 - Feature Request problem,Open,Low,2026-04-15,,30,Technical,
+TKT062,ACC023,Issue #62 - Billing problem,Open,Medium,2026-03-10,,66,Billing,
+TKT063,ACC024,Issue #63 - Performance problem,Resolved,Low,2026-04-30,2026-05-02,0,Product Gap,6.0
+TKT064,ACC025,Issue #64 - Product Gap problem,Open,Critical,2026-03-14,,62,Technical,
+TKT065,ACC025,Issue #65 - Billing problem,Open,Low,2026-03-21,,55,Outage,
+TKT066,ACC026,Issue #66 - Outage problem,Open,Low,2026-05-07,,8,Performance,
+TKT067,ACC026,Issue #67 - Performance problem,Resolved,Medium,2026-04-23,2026-04-27,0,Churn Risk,9.0
+TKT068,ACC027,Issue #68 - How-To problem,Open,Low,2026-05-10,,5,Performance,
+TKT069,ACC027,Issue #69 - Product Gap problem,Open,Medium,2026-03-01,,75,Billing,
+TKT070,ACC027,Issue #70 - Product Gap problem,Resolved,Low,2026-04-04,2026-04-05,0,Churn Risk,6.0
+TKT071,ACC027,Issue #71 - Technical problem,Open,Medium,2026-04-26,,19,How-To,
+TKT072,ACC028,Issue #72 - How-To problem,Resolved,Medium,2026-04-22,2026-04-23,0,Product Gap,7.0
+TKT073,ACC028,Issue #73 - Technical problem,Open,Medium,2026-04-30,,15,Product Gap,
+TKT074,ACC028,Issue #74 - Feature Request problem,Resolved,Critical,2026-03-11,2026-03-15,0,Technical,8.0
+TKT075,ACC028,Issue #75 - Billing problem,Open,High,2026-05-02,,13,Outage,
+TKT076,ACC029,Issue #76 - Performance problem,Open,Medium,2026-05-05,,10,Churn Risk,
+TKT077,ACC029,Issue #77 - Billing problem,Open,Critical,2026-03-10,,66,Churn Risk,
+TKT078,ACC029,Issue #78 - Technical problem,Resolved,High,2026-05-06,2026-05-07,0,Outage,3.0
+TKT079,ACC029,Issue #79 - Churn Risk problem,Open,Critical,2026-03-06,,70,Feature Request,
+TKT080,ACC029,Issue #80 - Outage problem,Open,Medium,2026-05-06,,9,Technical,
+TKT081,ACC030,Issue #81 - Outage problem,Resolved,Low,2026-03-29,2026-04-01,0,Product Gap,9.0
+TKT082,ACC030,Issue #82 - Performance problem,Resolved,Medium,2026-03-15,2026-03-19,0,Churn Risk,9.0
+TKT083,ACC031,Issue #83 - Billing problem,Resolved,High,2026-03-05,2026-03-06,0,Product Gap,5.0
+TKT084,ACC031,Issue #84 - Billing problem,Open,Medium,2026-04-17,,28,Outage,
+TKT085,ACC031,Issue #85 - Product Gap problem,Open,High,2026-04-03,,42,Performance,
+TKT086,ACC031,Issue #86 - Outage problem,Open,Low,2026-03-15,,61,Product Gap,
+TKT087,ACC031,Issue #87 - Technical problem,Open,High,2026-04-05,,40,Billing,
+TKT088,ACC031,Issue #88 - Performance problem,Open,Critical,2026-03-20,,56,Technical,
+TKT089,ACC032,Issue #89 - Outage problem,Resolved,Medium,2026-03-15,2026-03-16,0,Outage,4.0
+TKT090,ACC032,Issue #90 - Outage problem,Open,High,2026-05-06,,9,Outage,
+TKT091,ACC032,Issue #91 - Outage problem,Open,High,2026-03-15,,61,Product Gap,
+TKT092,ACC032,Issue #92 - Billing problem,Open,Medium,2026-03-31,,45,Technical,
+TKT093,ACC032,Issue #93 - Billing problem,Open,Medium,2026-04-17,,28,Feature Request,
+TKT094,ACC033,Issue #94 - Churn Risk problem,Resolved,Medium,2026-03-14,2026-03-19,0,How-To,1.0
+TKT095,ACC033,Issue #95 - Churn Risk problem,Open,High,2026-04-23,,22,Billing,
+TKT096,ACC033,Issue #96 - Feature Request problem,Open,High,2026-03-31,,45,Feature Request,
+TKT097,ACC033,Issue #97 - Performance problem,Open,Critical,2026-04-20,,25,Outage,
+TKT098,ACC033,Issue #98 - How-To problem,Resolved,High,2026-03-06,2026-03-08,0,Churn Risk,1.0
+TKT099,ACC033,Issue #99 - Performance problem,Open,Medium,2026-03-25,,51,Billing,
+TKT100,ACC034,Issue #100 - Churn Risk problem,Open,High,2026-04-01,,44,Product Gap,
+TKT101,ACC034,Issue #101 - Outage problem,Open,Low,2026-03-19,,57,Billing,
+TKT102,ACC034,Issue #102 - Performance problem,Open,High,2026-03-14,,62,Performance,
+TKT103,ACC034,Issue #103 - Technical problem,Open,Critical,2026-04-24,,21,Billing,
+TKT104,ACC035,Issue #104 - How-To problem,Open,Low,2026-04-21,,24,Outage,
+TKT105,ACC035,Issue #105 - Feature Request problem,Open,High,2026-03-05,,71,How-To,
+TKT106,ACC035,Issue #106 - Billing problem,Resolved,Medium,2026-03-01,2026-03-04,0,Performance,10.0
+TKT107,ACC035,Issue #107 - Outage problem,Resolved,High,2026-04-21,2026-04-26,0,Technical,6.0
+TKT108,ACC037,Issue #108 - Product Gap problem,Open,High,2026-04-07,,38,Technical,
+TKT109,ACC037,Issue #109 - Feature Request problem,Open,Medium,2026-03-08,,68,Churn Risk,
+TKT110,ACC039,Issue #110 - Technical problem,Resolved,Medium,2026-03-20,2026-03-23,0,Performance,9.0
+TKT111,ACC039,Issue #111 - Outage problem,Resolved,Medium,2026-03-18,2026-03-22,0,Performance,8.0
+TKT112,ACC040,Issue #112 - Performance problem,Resolved,Critical,2026-03-31,2026-04-03,0,Outage,10.0
+TKT113,ACC040,Issue #113 - Billing problem,Resolved,Low,2026-04-27,2026-04-30,0,Feature Request,9.0
+TKT114,ACC042,Issue #114 - Product Gap problem,Resolved,Critical,2026-04-28,2026-05-02,0,How-To,2.0
+TKT115,ACC042,Issue #115 - How-To problem,Open,High,2026-03-30,,46,Performance,
+TKT116,ACC042,Issue #116 - Feature Request problem,Open,High,2026-03-08,,68,Churn Risk,
+TKT117,ACC042,Issue #117 - How-To problem,Resolved,High,2026-05-08,2026-05-12,0,How-To,5.0
+TKT118,ACC042,Issue #118 - Churn Risk problem,Resolved,High,2026-03-26,2026-03-29,0,Feature Request,5.0
+TKT119,ACC043,Issue #119 - Outage problem,Open,High,2026-04-27,,18,Product Gap,
+TKT120,ACC043,Issue #120 - How-To problem,Resolved,Medium,2026-03-25,2026-03-26,0,Outage,10.0
+TKT121,ACC044,Issue #121 - Feature Request problem,Open,Medium,2026-05-01,,14,Billing,
+TKT122,ACC044,Issue #122 - Outage problem,Open,Medium,2026-04-24,,21,Outage,
+TKT123,ACC044,Issue #123 - Technical problem,Resolved,Medium,2026-04-22,2026-04-27,0,Technical,6.0
+TKT124,ACC045,Issue #124 - Performance problem,Open,High,2026-03-29,,47,Performance,
+TKT125,ACC045,Issue #125 - Product Gap problem,Open,Medium,2026-03-30,,46,Feature Request,
+TKT126,ACC045,Issue #126 - Churn Risk problem,Open,High,2026-03-28,,48,Feature Request,
+TKT127,ACC045,Issue #127 - Billing problem,Open,Medium,2026-03-11,,65,Product Gap,
+TKT128,ACC045,Issue #128 - Technical problem,Open,High,2026-04-01,,44,Churn Risk,
+TKT129,ACC046,Issue #129 - Performance problem,Open,Medium,2026-04-11,,34,Product Gap,
+TKT130,ACC046,Issue #130 - Billing problem,Open,Low,2026-04-22,,23,How-To,
+TKT131,ACC046,Issue #131 - Product Gap problem,Open,Medium,2026-05-08,,7,How-To,
+TKT132,ACC047,Issue #132 - Technical problem,Open,Critical,2026-03-07,,69,Performance,
+TKT133,ACC047,Issue #133 - Churn Risk problem,Resolved,Critical,2026-03-05,2026-03-08,0,Product Gap,3.0
+TKT134,ACC047,Issue #134 - Outage problem,Open,High,2026-04-18,,27,Feature Request,
+TKT135,ACC047,Issue #135 - Feature Request problem,Resolved,Medium,2026-03-10,2026-03-12,0,How-To,3.0
+TKT136,ACC047,Issue #136 - Churn Risk problem,Open,High,2026-04-04,,41,Outage,
+TKT137,ACC047,Issue #137 - Feature Request problem,Open,Critical,2026-03-10,,66,Feature Request,
+TKT138,ACC047,Issue #138 - Product Gap problem,Open,High,2026-04-25,,20,Outage,
+TKT139,ACC048,Issue #139 - Churn Risk problem,Resolved,Medium,2026-04-03,2026-04-04,0,Feature Request,4.0
+TKT140,ACC048,Issue #140 - Feature Request problem,Resolved,Medium,2026-04-13,2026-04-18,0,Performance,1.0
+TKT141,ACC048,Issue #141 - How-To problem,Resolved,Medium,2026-04-10,2026-04-15,0,Technical,1.0
+TKT142,ACC048,Issue #142 - Performance problem,Open,High,2026-03-19,,57,Technical,
+TKT143,ACC048,Issue #143 - Churn Risk problem,Open,Medium,2026-03-01,,75,Churn Risk,
+TKT144,ACC049,Issue #144 - Billing problem,Open,High,2026-04-04,,41,How-To,
+TKT145,ACC049,Issue #145 - Technical problem,Open,Critical,2026-03-03,,73,Performance,
+TKT146,ACC049,Issue #146 - Technical problem,Open,Medium,2026-03-18,,58,Product Gap,
+TKT147,ACC049,Issue #147 - Technical problem,Resolved,Critical,2026-03-08,2026-03-11,0,Feature Request,5.0
+TKT148,ACC049,Issue #148 - Churn Risk problem,Open,Medium,2026-04-27,,18,Churn Risk,

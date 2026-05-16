@@ -1,0 +1,28 @@
+services:
+  chromadb:
+    image: chromadb/chroma
+    container_name: crm_chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+  app:
+    build: .
+    container_name: crm_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - chromadb
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.1:8b
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - DATA_DIR=data/sample
+      - OUTPUT_DIR=data/output
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  chroma_data:

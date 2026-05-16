@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:         #070910;
+      --surface:    #0D1018;
+      --surface2:   #121720;
+      --surface3:   #171D28;
+      --border:     #1A2035;
+      --border2:    #232C42;
+      --red:        #F83B3B;
+      --amber:      #F5A623;
+      --green:      #1ED760;
+      --blue:       #4C8EF7;
+      --text:       #D8E0EE;
+      --text-dim:   #8A97B0;
+      --text-muted: #4A5568;
+      --mono:       'IBM Plex Mono', monospace;
+      --sans:       'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+    }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; height: 56px;
+      background: rgba(7,9,16,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .brand-mark {
+      width: 30px; height: 30px; border-radius: 7px;
+      background: linear-gradient(135deg, var(--blue), #818CF8);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 11px; font-weight: 600; color: white;
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-name { font-size: 14px; font-weight: 600; letter-spacing: -0.3px; }
+    .brand-sub  { font-family: var(--mono); font-size: 10px; color: var(--text-muted); }
+
+    .header-right { display: flex; align-items: center; gap: 16px; }
+
+    .status-pill {
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 12px;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 6px var(--green);
+    }
+    .status-dot.running {
+      background: var(--amber); box-shadow: 0 0 6px var(--amber);
+      animation: pulse 1s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .btn-run {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff;
+      border: none; border-radius: 7px; padding: 8px 18px;
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      font-family: var(--sans);
+    }
+    .btn-run:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .spinner {
+      width: 12px; height: 12px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff; border-radius: 50%;
+      animation: spin 0.65s linear infinite; display: none;
+    }
+    .btn-run.running .spinner { display: block; }
+    .btn-run:not(.running) .run-label::before { content: 'Run Pipeline'; }
+    .btn-run.running .run-label::before { content: 'Running...'; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .main {
+      max-width: 1380px; margin: 0 auto;
+      padding: 24px 28px 60px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px; margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px 14px;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+    }
+    .card.c-red::before   { background: var(--red); }
+    .card.c-amber::before { background: var(--amber); }
+    .card.c-green::before { background: var(--green); }
+    .card.c-blue::before  { background: var(--blue); }
+    .card.c-grey::before  { background: var(--border2); }
+
+    .card-label {
+      font-size: 10px; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-muted);
+      font-weight: 600; margin-bottom: 10px;
+    }
+    .card-value {
+      font-family: var(--mono); font-size: 28px;
+      font-weight: 600; line-height: 1; letter-spacing: -1px;
+    }
+    .v-red   { color: var(--red); }
+    .v-amber { color: var(--amber); }
+    .v-green { color: var(--green); }
+    .v-text  { color: var(--text); }
+    .card-sub {
+      font-size: 10px; color: var(--text-muted);
+      margin-top: 5px; font-family: var(--mono);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 14px; align-items: start;
+    }
+
+    .left-panel {
+      position: sticky; top: 70px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 16px;
+    }
+
+    .panel-title {
+      font-size: 10px; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-muted);
+      font-weight: 600; margin-bottom: 16px;
+    }
+
+    .donut-wrap { position: relative; width: 160px; margin: 0 auto 16px; }
+
+    .donut-center {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); text-align: center;
+    }
+
+    .donut-n   { font-family: var(--mono); font-size: 26px; font-weight: 600; }
+    .donut-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+
+    .legend { display: flex; flex-direction: column; gap: 4px; }
+
+    .legend-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 7px 10px; border-radius: 7px; cursor: pointer;
+      border: 1px solid transparent; transition: all 0.12s;
+    }
+    .legend-item:hover { background: var(--surface2); }
+    .legend-item.active { border-color: var(--border2); background: var(--surface2); }
+
+    .legend-lft { display: flex; align-items: center; gap: 9px; }
+    .pip { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .legend-name { font-size: 13px; font-weight: 500; }
+    .legend-cnt  { font-family: var(--mono); font-size: 13px; color: var(--text-dim); }
+
+    .right-panel { display: flex; flex-direction: column; gap: 12px; }
+
+    .filters {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+
+    .search-wrap { flex: 1; min-width: 180px; }
+
+    .search-input {
+      width: 100%; background: var(--surface2);
+      border: 1px solid var(--border); border-radius: 7px;
+      padding: 8px 12px; color: var(--text);
+      font-size: 13px; font-family: var(--sans); outline: none;
+    }
+    .search-input:focus { border-color: var(--blue); }
+    .search-input::placeholder { color: var(--text-muted); }
+
+    select {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 7px; padding: 8px 12px;
+      color: var(--text); font-size: 13px;
+      font-family: var(--sans); outline: none; cursor: pointer;
+    }
+
+    .filter-count {
+      margin-left: auto;
+      font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+    }
+
+    .accounts-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+    }
+
+    .table-header {
+      display: grid;
+      grid-template-columns: 1fr 90px 80px 90px 1fr 40px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 10px; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-muted); font-weight: 600;
+    }
+
+    .empty {
+      text-align: center; padding: 60px 20px;
+      color: var(--text-muted); font-size: 14px;
+    }
+
+    .account-row {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .account-row:last-child { border-bottom: none; }
+    .account-row:hover .row-main { background: var(--surface2); }
+
+    .row-main {
+      display: grid;
+      grid-template-columns: 1fr 90px 80px 90px 1fr 40px;
+      padding: 13px 16px; align-items: center;
+      border-left: 3px solid transparent;
+      transition: all 0.1s;
+    }
+    .row-main.hs-Red   { border-left-color: var(--red); }
+    .row-main.hs-Amber { border-left-color: var(--amber); }
+    .row-main.hs-Green { border-left-color: var(--green); }
+
+    .acc-name  { font-size: 13px; font-weight: 500; }
+    .acc-owner { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    .tier-badge {
+      display: inline-block; padding: 3px 8px; border-radius: 5px;
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      background: var(--surface3); color: var(--text-dim);
+      border: 1px solid var(--border2);
+    }
+
+    .health-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; }
+    .health-dot   { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .hd-Red   { background: var(--red);   box-shadow: 0 0 5px var(--red); }
+    .hd-Amber { background: var(--amber); box-shadow: 0 0 5px var(--amber); }
+    .hd-Green { background: var(--green); box-shadow: 0 0 5px var(--green); }
+
+    .mrr-val     { font-family: var(--mono); font-size: 12px; }
+    .action-text { font-size: 11px; color: var(--text-muted); }
+
+    .expand-btn {
+      width: 24px; height: 24px; border-radius: 5px;
+      background: var(--surface3); border: 1px solid var(--border2);
+      color: var(--text-dim); display: flex; align-items: center;
+      justify-content: center; cursor: pointer;
+      font-size: 16px; line-height: 1; transition: all 0.15s;
+    }
+    .expand-btn:hover { background: var(--border2); color: var(--text); }
+    .expand-btn.open  { background: var(--blue); border-color: var(--blue); color: white; }
+
+    .row-detail {
+      display: none; padding: 16px 20px 20px;
+      background: var(--surface2);
+      border-top: 1px solid var(--border);
+    }
+    .row-detail.open { display: block; }
+
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .detail-section-title {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--text-muted); font-weight: 600; margin-bottom: 10px;
+    }
+
+    .risk-factors { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .risk-factors li {
+      font-size: 12px; color: var(--text-dim);
+      padding-left: 14px; position: relative; line-height: 1.5;
+    }
+    .risk-factors li::before { content: '→'; position: absolute; left: 0; color: var(--text-muted); }
+
+    .risk-summary-text {
+      font-size: 12px; color: var(--text-dim); line-height: 1.6;
+      margin-top: 10px; padding: 10px 12px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 7px;
+    }
+
+    .email-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 7px; overflow: hidden;
+    }
+
+    .email-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+    }
+
+    .email-label {
+      font-size: 10px; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-muted); font-weight: 600;
+    }
+
+    .copy-btn {
+      background: var(--surface2); border: 1px solid var(--border2);
+      border-radius: 5px; padding: 4px 10px;
+      font-size: 11px; color: var(--text-dim);
+      cursor: pointer; font-family: var(--sans); transition: all 0.15s;
+    }
+    .copy-btn:hover  { background: var(--border2); color: var(--text); }
+    .copy-btn.copied { background: rgba(30,215,96,0.1); border-color: var(--green); color: var(--green); }
+
+    .email-body {
+      padding: 12px; font-size: 12px; color: var(--text-dim);
+      line-height: 1.7; white-space: pre-wrap;
+      font-family: var(--sans); max-height: 200px; overflow-y: auto;
+    }
+
+    .toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--surface); border: 1px solid var(--border2);
+      border-radius: 8px; padding: 12px 18px;
+      font-size: 13px; color: var(--text);
+      transform: translateY(80px); opacity: 0;
+      transition: all 0.3s; z-index: 999;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <div class="brand-mark">CRM</div>
+      <div class="brand-text">
+        <div class="brand-name">CRM Intelligence</div>
+        <div class="brand-sub">LOCAL MULTI-AGENT PIPELINE</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-pill">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">idle</span>
+      </div>
+      <button class="btn-run" id="runBtn" onclick="triggerPipeline()">
+        <div class="spinner"></div>
+        <span class="run-label"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="cards">
+      <div class="card c-grey">
+        <div class="card-label">Total Accounts</div>
+        <div class="card-value v-text" id="cTotal">—</div>
+        <div class="card-sub" id="cUpdated">—</div>
+      </div>
+      <div class="card c-red">
+        <div class="card-label">Red — At Risk</div>
+        <div class="card-value v-red" id="cRed">—</div>
+        <div class="card-sub" id="cRedPct">—</div>
+      </div>
+      <div class="card c-amber">
+        <div class="card-label">Amber — Watch</div>
+        <div class="card-value v-amber" id="cAmber">—</div>
+        <div class="card-sub" id="cAmberPct">—</div>
+      </div>
+      <div class="card c-green">
+        <div class="card-label">Green — Healthy</div>
+        <div class="card-value v-green" id="cGreen">—</div>
+        <div class="card-sub" id="cGreenPct">—</div>
+      </div>
+      <div class="card c-blue">
+        <div class="card-label">MRR at Risk</div>
+        <div class="card-value v-text" id="cMrr">—</div>
+        <div class="card-sub" id="cMrrTotal">—</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+
+      <div class="left-panel">
+        <div class="panel">
+          <div class="panel-title">Health Distribution</div>
+          <div class="donut-wrap">
+            <svg id="donutSvg" width="160" height="160" viewBox="0 0 160 160"></svg>
+            <div class="donut-center">
+              <div class="donut-n" id="donutN">—</div>
+              <div class="donut-lbl">accounts</div>
+            </div>
+          </div>
+          <div class="legend">
+            <div class="legend-item fil-red" onclick="setFilter('Red')">
+              <div class="legend-lft">
+                <div class="pip" style="background:var(--red)"></div>
+                <span class="legend-name">Red</span>
+              </div>
+              <span class="legend-cnt" id="lRed">—</span>
+            </div>
+            <div class="legend-item fil-amber" onclick="setFilter('Amber')">
+              <div class="legend-lft">
+                <div class="pip" style="background:var(--amber)"></div>
+                <span class="legend-name">Amber</span>
+              </div>
+              <span class="legend-cnt" id="lAmber">—</span>
+            </div>
+            <div class="legend-item fil-green" onclick="setFilter('Green')">
+              <div class="legend-lft">
+                <div class="pip" style="background:var(--green)"></div>
+                <span class="legend-name">Green</span>
+              </div>
+              <span class="legend-cnt" id="lGreen">—</span>
+            </div>
+            <div class="legend-item fil-all active" onclick="setFilter('All')">
+              <div class="legend-lft">
+                <div class="pip" style="background:var(--text-muted)"></div>
+                <span class="legend-name">All</span>
+              </div>
+              <span class="legend-cnt" id="lAll">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="filters">
+          <div class="search-wrap">
+            <input class="search-input" id="searchInput"
+              placeholder="Search accounts or owners..."
+              oninput="renderTable()">
+          </div>
+          <select id="tierFilter" onchange="renderTable()">
+            <option value="All">All Tiers</option>
+            <option value="Enterprise">Enterprise</option>
+            <option value="Mid-Market">Mid-Market</option>
+            <option value="SMB">SMB</option>
+          </select>
+          <select id="sortFilter" onchange="renderTable()">
+            <option value="health">Sort: Health</option>
+            <option value="mrr">Sort: MRR</option>
+            <option value="name">Sort: Name</option>
+          </select>
+          <div class="filter-count" id="filterCount">— accounts</div>
+        </div>
+
+        <div class="accounts-wrap">
+          <div class="table-header">
+            <div>Account</div>
+            <div>Tier</div>
+            <div>Health</div>
+            <div>MRR</div>
+            <div>Recommended Action</div>
+            <div></div>
+          </div>
+          <div id="accountList">
+            <div class="empty">Loading accounts...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const API = 'http://localhost:8080';
+    let allAccounts = [];
+    let activeFilter = 'All';
+    let openRow = null;
+
+    async function init() {
+      await loadSummary();
+      await loadAccounts();
+      pollStatus();
+    }
+
+    async function loadSummary() {
+      try {
+        const r = await fetch(`${API}/api/summary`);
+        const d = await r.json();
+        document.getElementById('cTotal').textContent = d.total;
+        document.getElementById('cRed').textContent   = d.red;
+        document.getElementById('cAmber').textContent = d.amber;
+        document.getElementById('cGreen').textContent = d.green;
+        document.getElementById('cMrr').textContent   = '$' + fmt(d.mrr_at_risk);
+        const pct = n => d.total ? Math.round(n / d.total * 100) + '% of accounts' : '—';
+        document.getElementById('cRedPct').textContent   = pct(d.red);
+        document.getElementById('cAmberPct').textContent = pct(d.amber);
+        document.getElementById('cGreenPct').textContent = pct(d.green);
+        document.getElementById('cMrrTotal').textContent = 'of $' + fmt(d.total_mrr) + ' total';
+        if (d.last_updated) {
+          const dt = new Date(d.last_updated);
+          document.getElementById('cUpdated').textContent = 'Updated ' + dt.toLocaleTimeString();
+        }
+        document.getElementById('lRed').textContent   = d.red;
+        document.getElementById('lAmber').textContent = d.amber;
+        document.getElementById('lGreen').textContent = d.green;
+        document.getElementById('lAll').textContent   = d.total;
+        document.getElementById('donutN').textContent = d.total;
+        drawDonut(d.red, d.amber, d.green);
+      } catch(e) { console.error('Summary error:', e); }
+    }
+
+    async function loadAccounts() {
+      try {
+        const r = await fetch(`${API}/api/accounts`);
+        allAccounts = await r.json();
+        renderTable();
+      } catch(e) {
+        document.getElementById('accountList').innerHTML =
+          '<div class="empty">Could not load accounts. Is the server running?</div>';
+      }
+    }
+
+    function renderTable() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const tier   = document.getElementById('tierFilter').value;
+      const sort   = document.getElementById('sortFilter').value;
+      const order  = { Red: 0, Amber: 1, Green: 2 };
+
+      let filtered = allAccounts.filter(a => {
+        const matchFilter = activeFilter === 'All' || a.health_score === activeFilter;
+        const matchTier   = tier === 'All' || a.tier === tier;
+        const matchSearch = !search ||
+          (a.account_name || '').toLowerCase().includes(search) ||
+          (a.account_owner || '').toLowerCase().includes(search);
+        return matchFilter && matchTier && matchSearch;
+      });
+
+      filtered.sort((a, b) => {
+        if (sort === 'health') return (order[a.health_score] ?? 1) - (order[b.health_score] ?? 1);
+        if (sort === 'mrr')    return (b.mrr || 0) - (a.mrr || 0);
+        if (sort === 'name')   return (a.account_name || '').localeCompare(b.account_name || '');
+        return 0;
+      });
+
+      document.getElementById('filterCount').textContent = `${filtered.length} accounts`;
+
+      if (!filtered.length) {
+        document.getElementById('accountList').innerHTML =
+          '<div class="empty">No accounts match your filters.</div>';
+        return;
+      }
+
+      document.getElementById('accountList').innerHTML = filtered.map(a => {
+        const hs      = a.health_score || 'Unknown';
+        const factors = (a.risk_factors || []).map(f => `<li>${esc(f)}</li>`).join('');
+        return `
+        <div class="account-row" id="row-${a.account_id}">
+          <div class="row-main hs-${hs}" onclick="toggleRow('${a.account_id}')">
+            <div>
+              <div class="acc-name">${esc(a.account_name)}</div>
+              <div class="acc-owner">${esc(a.account_owner || '—')}</div>
+            </div>
+            <div><span class="tier-badge">${esc(a.tier || '—')}</span></div>
+            <div>
+              <div class="health-badge">
+                <div class="health-dot hd-${hs}"></div>${hs}
+              </div>
+            </div>
+            <div class="mrr-val">$${fmt(a.mrr)}</div>
+            <div class="action-text">${esc(a.recommended_action || '—')}</div>
+            <button class="expand-btn" id="btn-${a.account_id}"
+              onclick="event.stopPropagation(); toggleRow('${a.account_id}')">+</button>
+          </div>
+          <div class="row-detail" id="detail-${a.account_id}">
+            <div class="detail-grid">
+              <div>
+                <div class="detail-section-title">Risk Factors</div>
+                <ul class="risk-factors">${factors || '<li>No risk factors recorded.</li>'}</ul>
+                <div class="risk-summary-text">${esc(a.risk_summary || '—')}</div>
+              </div>
+              <div>
+                <div class="detail-section-title">Draft Outreach Email</div>
+                <div class="email-wrap">
+                  <div class="email-header">
+                    <span class="email-label">from ${esc(a.account_owner || 'Account Owner')}</span>
+                    <button class="copy-btn" id="copy-${a.account_id}"
+                      onclick="copyEmail('${a.account_id}')">Copy</button>
+                  </div>
+                  <div class="email-body" id="email-${a.account_id}">${esc(a.draft_email || '—')}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function toggleRow(id) {
+      const detail = document.getElementById(`detail-${id}`);
+      const btn    = document.getElementById(`btn-${id}`);
+      const isOpen = detail.classList.contains('open');
+      if (openRow && openRow !== id) {
+        document.getElementById(`detail-${openRow}`)?.classList.remove('open');
+        const ob = document.getElementById(`btn-${openRow}`);
+        if (ob) { ob.textContent = '+'; ob.classList.remove('open'); }
+      }
+      if (isOpen) {
+        detail.classList.remove('open'); btn.textContent = '+'; btn.classList.remove('open'); openRow = null;
+      } else {
+        detail.classList.add('open'); btn.textContent = '−'; btn.classList.add('open'); openRow = id;
+      }
+    }
+
+    function setFilter(f) {
+      activeFilter = f;
+      document.querySelectorAll('.legend-item').forEach(el => el.classList.remove('active'));
+      const map = { Red: 'fil-red', Amber: 'fil-amber', Green: 'fil-green', All: 'fil-all' };
+      document.querySelector(`.${map[f]}`)?.classList.add('active');
+      openRow = null;
+      renderTable();
+    }
+
+    function copyEmail(id) {
+      const text = document.getElementById(`email-${id}`)?.innerText || '';
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(`copy-${id}`);
+        btn.textContent = 'Copied!'; btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    async function triggerPipeline() {
+      const btn = document.getElementById('runBtn');
+      btn.disabled = true; btn.classList.add('running');
+      try {
+        await fetch(`${API}/api/pipeline/run`, { method: 'POST' });
+        showToast('Pipeline started — this will take ~60 minutes.');
+      } catch(e) {
+        showToast('Could not start pipeline.');
+        btn.disabled = false; btn.classList.remove('running');
+      }
+    }
+
+    let wasRunning = false;
+    async function pollStatus() {
+      try {
+        const r = await fetch(`${API}/api/pipeline/status`);
+        const d = await r.json();
+        const running = d.status === 'running';
+        document.getElementById('statusDot').className = 'status-dot' + (running ? ' running' : '');
+        document.getElementById('statusText').textContent = running ? 'running' : 'idle';
+        const btn = document.getElementById('runBtn');
+        btn.disabled = running;
+        running ? btn.classList.add('running') : btn.classList.remove('running');
+        if (wasRunning && !running) {
+          showToast('Pipeline complete — refreshing data.');
+          await loadSummary(); await loadAccounts();
+        }
+        wasRunning = running;
+      } catch(e) {}
+      setTimeout(pollStatus, 3000);
+    }
+
+    function drawDonut(red, amber, green) {
+      const total = red + amber + green || 1;
+      const cx = 80, cy = 80, r = 62, stroke = 16;
+      const circ = 2 * Math.PI * r;
+      const segments = [
+        { val: red,   color: '#F83B3B' },
+        { val: amber, color: '#F5A623' },
+        { val: green, color: '#1ED760' },
+      ];
+      let offset = 0;
+      const svg = document.getElementById('donutSvg');
+      svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${r}"
+        fill="none" stroke="#1A2035" stroke-width="${stroke}"/>`;
+      segments.forEach(seg => {
+        if (!seg.val) return;
+        const len = (seg.val / total) * circ - 2;
+        const el  = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        el.setAttribute('cx', cx); el.setAttribute('cy', cy); el.setAttribute('r', r);
+        el.setAttribute('fill', 'none'); el.setAttribute('stroke', seg.color);
+        el.setAttribute('stroke-width', stroke);
+        el.setAttribute('stroke-dasharray', `${len} ${circ - len}`);
+        el.setAttribute('stroke-dashoffset', circ * 0.25 - offset);
+        el.setAttribute('stroke-linecap', 'round');
+        svg.appendChild(el);
+        offset += (seg.val / total) * circ;
+      });
+    }
+
+    function fmt(n) { return n ? Number(n).toLocaleString() : '—'; }
+    function esc(s) {
+      return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

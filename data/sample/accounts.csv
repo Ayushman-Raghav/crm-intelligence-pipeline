@@ -1,0 +1,51 @@
+account_id,account_name,industry,account_owner,contract_start_date,contract_end_date,mrr,tier,region,health_status
+ACC001,Acme Corp,Healthcare,Sarah Johnson,2025-03-11,2026-10-06,3126,Mid-Market,Middle East,Green
+ACC002,Globex Industries,Manufacturing,Liam Burke,2025-08-13,2026-10-03,5488,Enterprise,Middle East,Amber
+ACC003,Initech Solutions,Education,Liam Burke,2024-09-13,2026-10-04,13928,Enterprise,APAC,Green
+ACC004,Umbrella Ltd,Pharma,James Patel,2023-12-03,2027-01-16,826,SMB,Europe,Green
+ACC005,Hooli Inc,Finance,James Patel,2025-08-14,2026-12-25,6674,Enterprise,APAC,Red
+ACC006,Massive Dynamic,Finance,Emma Davis,2024-08-03,2027-03-15,4988,Mid-Market,North America,Red
+ACC007,Soylent Corp,Manufacturing,Sarah Johnson,2024-11-11,2027-04-05,4533,Mid-Market,North America,Red
+ACC008,Cyberdyne Systems,Legal,James Patel,2025-03-23,2026-08-04,2326,Mid-Market,LATAM,Red
+ACC009,Veridian Dynamics,Retail,Sarah Johnson,2024-11-18,2026-09-29,3516,Mid-Market,Middle East,Green
+ACC010,Monarch Solutions,Legal,James Patel,2025-06-02,2027-02-05,3002,Mid-Market,Middle East,Amber
+ACC011,Apex Dynamics,Pharma,Emma Davis,2025-03-27,2026-06-30,5916,Enterprise,APAC,Green
+ACC012,Nexus Corp,Education,Emma Davis,2024-12-29,2026-09-30,14292,Enterprise,LATAM,Red
+ACC013,Pinnacle Tech,Energy,Emma Davis,2024-05-14,2026-10-26,14197,Enterprise,Middle East,Green
+ACC014,Quantum Leap,Finance,Sarah Johnson,2024-06-13,2027-02-21,2566,Mid-Market,North America,Green
+ACC015,Horizon Systems,Legal,Emma Davis,2024-03-16,2026-07-16,11916,Enterprise,Middle East,Green
+ACC016,Zenith Analytics,Logistics,James Patel,2025-11-05,2026-08-11,1633,SMB,APAC,Amber
+ACC017,Catalyst Group,Logistics,Mike Chen,2025-11-13,2026-10-26,12433,Enterprise,Middle East,Amber
+ACC018,Vertex Solutions,Energy,Mike Chen,2024-02-01,2027-02-28,1111,SMB,Europe,Red
+ACC019,Prism Technologies,Pharma,Emma Davis,2025-11-16,2027-04-16,4172,Mid-Market,North America,Green
+ACC020,Aurora Labs,Manufacturing,Liam Burke,2025-03-16,2026-07-13,10038,Enterprise,North America,Green
+ACC021,Cobalt Systems,Healthcare,Emma Davis,2024-05-20,2026-08-17,6133,Enterprise,Middle East,Amber
+ACC022,Delphi Corp,Logistics,Mike Chen,2024-09-09,2026-09-30,14938,Enterprise,APAC,Amber
+ACC023,Eclipse Ventures,Education,Sarah Johnson,2024-08-25,2027-03-05,3529,Mid-Market,Europe,Amber
+ACC024,Fusion Works,Energy,Mike Chen,2024-04-28,2026-10-09,14638,Enterprise,North America,Green
+ACC025,Genesis Tech,Pharma,Sarah Johnson,2025-09-08,2026-06-30,8750,Enterprise,Middle East,Amber
+ACC026,Helios Group,Energy,Liam Burke,2024-05-13,2026-08-20,8510,Enterprise,LATAM,Amber
+ACC027,Ironclad Solutions,Finance,Emma Davis,2025-05-06,2026-08-01,11669,Enterprise,APAC,Amber
+ACC028,Jade Systems,Finance,Sarah Johnson,2025-09-22,2027-05-14,4986,Mid-Market,LATAM,Amber
+ACC029,Kinetic Labs,Manufacturing,Liam Burke,2025-03-07,2026-09-20,723,SMB,LATAM,Red
+ACC030,Luminary Corp,Education,Liam Burke,2025-03-06,2026-07-22,12579,Enterprise,North America,Green
+ACC031,Matrix Solutions,Healthcare,Emma Davis,2025-08-13,2026-10-13,5241,Enterprise,LATAM,Red
+ACC032,Nova Dynamics,Technology,Emma Davis,2025-06-01,2026-12-25,2240,Mid-Market,APAC,Red
+ACC033,Orbit Technologies,Education,Mike Chen,2024-09-09,2027-03-25,1084,SMB,Europe,Red
+ACC034,Paragon Systems,Pharma,Sarah Johnson,2024-05-10,2026-07-15,14489,Enterprise,North America,Red
+ACC035,Quartz Analytics,Logistics,Sarah Johnson,2025-06-08,2026-07-13,4175,Mid-Market,Europe,Amber
+ACC036,Radiant Corp,Energy,Mike Chen,2024-09-29,2026-08-14,8853,Enterprise,Middle East,Green
+ACC037,Sapphire Solutions,Energy,Liam Burke,2024-01-13,2027-04-08,3717,Mid-Market,APAC,Amber
+ACC038,Titan Works,Retail,Emma Davis,2024-12-30,2026-10-14,1966,SMB,Europe,Green
+ACC039,Unity Labs,Education,Liam Burke,2025-09-03,2026-06-18,3295,Mid-Market,Middle East,Green
+ACC040,Valor Systems,Healthcare,James Patel,2024-06-16,2026-10-27,936,SMB,North America,Green
+ACC041,Warp Technologies,Retail,Liam Burke,2024-08-25,2027-03-19,823,SMB,Middle East,Green
+ACC042,Xenon Corp,Healthcare,James Patel,2024-01-07,2026-08-06,9905,Enterprise,North America,Red
+ACC043,Yield Dynamics,Energy,Mike Chen,2025-02-11,2026-11-05,818,SMB,APAC,Amber
+ACC044,Zephyr Solutions,Retail,Sarah Johnson,2024-06-17,2027-02-19,9325,Enterprise,North America,Amber
+ACC045,Blueshift Labs,Healthcare,James Patel,2025-11-13,2026-12-01,2180,Mid-Market,Europe,Red
+ACC046,Crestview Systems,Finance,Sarah Johnson,2024-04-21,2026-06-18,1375,SMB,Europe,Amber
+ACC047,Deltaforce Corp,Legal,Mike Chen,2024-04-30,2026-08-28,4385,Mid-Market,North America,Red
+ACC048,Ember Analytics,Manufacturing,Sarah Johnson,2024-11-15,2026-09-29,2163,Mid-Market,APAC,Red
+ACC049,Frontier Tech,Manufacturing,Mike Chen,2024-02-20,2026-09-01,1332,SMB,Europe,Red
+ACC050,Granite Solutions,Retail,Mike Chen,2024-09-21,2026-10-19,1180,SMB,North America,Green

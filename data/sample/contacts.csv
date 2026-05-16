@@ -1,0 +1,107 @@
+contact_id,account_id,first_name,last_name,email,role,is_primary,last_contacted_date,nps_score
+CON001,ACC001,Ethan,Wei,contact1@acmecorp.com,Operations Manager,True,2026-02-19,10
+CON002,ACC001,Chen,Wei,contact2@acmecorp.com,CTO,False,2026-04-18,8
+CON003,ACC002,Roberto,Mills,contact3@globexindustries.com,IT Manager,True,2026-04-17,7
+CON004,ACC002,Mason,Johnson,contact4@globexindustries.com,CTO,False,2026-04-23,5
+CON005,ACC003,Lisa,Schmidt,contact5@initechsolutions.com,Procurement Lead,True,2026-05-06,10
+CON006,ACC003,Emma,Davis,contact6@initechsolutions.com,Procurement Lead,False,2026-04-19,7
+CON007,ACC004,Karen,Park,contact7@umbrellaltd.com,CEO,True,2026-04-02,7
+CON008,ACC004,Mason,Bradley,contact8@umbrellaltd.com,IT Manager,False,2026-04-19,10
+CON009,ACC005,Emma,Tanaka,contact9@hooliinc.com,IT Manager,True,2026-02-15,1
+CON010,ACC006,Alex,Davis,contact10@massivedynamic.com,IT Manager,True,2026-03-13,4
+CON011,ACC006,David,Bradley,contact11@massivedynamic.com,CEO,False,2026-03-10,4
+CON012,ACC006,Priya,Tanaka,contact12@massivedynamic.com,Procurement Lead,False,2026-02-16,3
+CON013,ACC007,Alex,Turner,contact13@soylentcorp.com,Operations Manager,True,2026-05-14,4
+CON014,ACC007,Emma,Burke,contact14@soylentcorp.com,COO,False,2026-03-07,4
+CON015,ACC008,Priya,Ferretti,contact15@cyberdynesystems.com,Head of Technology,True,2026-04-29,5
+CON016,ACC008,Emma,Ferretti,contact16@cyberdynesystems.com,Operations Manager,False,2026-03-06,3
+CON017,ACC008,David,Wilson,contact17@cyberdynesystems.com,CTO,False,2026-05-08,2
+CON018,ACC009,Roberto,Burke,contact18@veridiandynamics.com,CEO,True,2026-02-24,8
+CON019,ACC009,Ethan,Patel,contact19@veridiandynamics.com,Operations Manager,False,2026-03-21,8
+CON020,ACC010,Anna,Davis,contact20@monarchsolutions.com,Operations Manager,True,2026-02-16,5
+CON021,ACC010,Ava,Burke,contact21@monarchsolutions.com,CTO,False,2026-03-01,7
+CON022,ACC010,Anna,Burke,contact22@monarchsolutions.com,VP Engineering,False,2026-04-17,6
+CON023,ACC011,Logan,Johnson,contact23@apexdynamics.com,COO,True,2026-04-27,10
+CON024,ACC011,Olivia,Nair,contact24@apexdynamics.com,COO,False,2026-03-10,10
+CON025,ACC011,Karen,Singh,contact25@apexdynamics.com,COO,False,2026-05-07,8
+CON026,ACC012,Alex,Wei,contact26@nexuscorp.com,Head of Technology,True,2026-04-22,3
+CON027,ACC012,Roberto,Moore,contact27@nexuscorp.com,VP Engineering,False,2026-04-27,2
+CON028,ACC013,Tom,Ferretti,contact28@pinnacletech.com,CEO,True,2026-02-28,10
+CON029,ACC013,Noah,Park,contact29@pinnacletech.com,Operations Manager,False,2026-04-30,10
+CON030,ACC014,James,Rossi,contact30@quantumleap.com,CEO,True,2026-03-08,10
+CON031,ACC014,Alex,Patel,contact31@quantumleap.com,CEO,False,2026-05-03,8
+CON032,ACC015,Ethan,Wilson,contact32@horizonsystems.com,CEO,True,2026-05-01,9
+CON033,ACC015,Sofia,Nair,contact33@horizonsystems.com,COO,False,2026-02-22,8
+CON034,ACC016,Sofia,Rossi,contact34@zenithanalytics.com,Procurement Lead,True,2026-04-15,7
+CON035,ACC016,Noah,Moore,contact35@zenithanalytics.com,COO,False,2026-04-24,5
+CON036,ACC016,Emma,Bradley,contact36@zenithanalytics.com,COO,False,2026-05-02,6
+CON037,ACC017,Karen,Davis,contact37@catalystgroup.com,Head of Technology,True,2026-03-21,5
+CON038,ACC017,Mason,Park,contact38@catalystgroup.com,IT Manager,False,2026-04-21,5
+CON039,ACC018,Lisa,Wilson,contact39@vertexsolutions.com,Operations Manager,True,2026-04-24,2
+CON040,ACC018,David,Wei,contact40@vertexsolutions.com,VP Engineering,False,2026-03-06,4
+CON041,ACC018,Tom,Burke,contact41@vertexsolutions.com,Head of Technology,False,2026-03-09,3
+CON042,ACC019,Anna,Nair,contact42@prismtechnologies.com,Head of Technology,True,2026-02-26,7
+CON043,ACC020,Isabella,Patel,contact43@auroralabs.com,CEO,True,2026-05-05,8
+CON044,ACC020,Chen,Schmidt,contact44@auroralabs.com,Head of Technology,False,2026-04-22,7
+CON045,ACC020,Lisa,Chen,contact45@auroralabs.com,CFO,False,2026-03-09,10
+CON046,ACC021,Emma,Wilson,contact46@cobaltsystems.com,CEO,True,2026-04-28,6
+CON047,ACC021,Olivia,Moore,contact47@cobaltsystems.com,CEO,False,2026-05-03,5
+CON048,ACC021,Karen,Tanaka,contact48@cobaltsystems.com,CFO,False,2026-03-04,6
+CON049,ACC022,Isabella,Mills,contact49@delphicorp.com,IT Manager,True,2026-04-21,5
+CON050,ACC022,Karen,Burke,contact50@delphicorp.com,Operations Manager,False,2026-04-09,6
+CON051,ACC023,Emma,Wilson,contact51@eclipseventures.com,COO,True,2026-03-21,6
+CON052,ACC023,Liam,Mills,contact52@eclipseventures.com,IT Manager,False,2026-05-08,6
+CON053,ACC023,Karen,Müller,contact53@eclipseventures.com,CTO,False,2026-03-01,7
+CON054,ACC024,Noah,Kim,contact54@fusionworks.com,CFO,True,2026-04-21,8
+CON055,ACC025,Ethan,Burke,contact55@genesistech.com,CTO,True,2026-04-22,5
+CON056,ACC025,Chen,Turner,contact56@genesistech.com,Procurement Lead,False,2026-05-02,6
+CON057,ACC025,Liam,Davis,contact57@genesistech.com,CFO,False,2026-04-28,6
+CON058,ACC026,Alex,Mills,contact58@heliosgroup.com,Operations Manager,True,2026-03-28,5
+CON059,ACC026,Anna,Müller,contact59@heliosgroup.com,VP Engineering,False,2026-03-25,5
+CON060,ACC027,Isabella,Singh,contact60@ironcladsolutions.com,Procurement Lead,True,2026-03-28,6
+CON061,ACC028,Chen,Chen,contact61@jadesystems.com,VP Engineering,True,2026-03-27,6
+CON062,ACC029,Karen,Park,contact62@kineticlabs.com,CTO,True,2026-04-06,5
+CON063,ACC030,Ethan,Schmidt,contact63@luminarycorp.com,CTO,True,2026-04-06,9
+CON064,ACC030,Emma,Nair,contact64@luminarycorp.com,CTO,False,2026-04-30,9
+CON065,ACC031,Sofia,Kim,contact65@matrixsolutions.com,IT Director,True,2026-05-12,5
+CON066,ACC031,David,Moore,contact66@matrixsolutions.com,Procurement Lead,False,2026-04-11,3
+CON067,ACC032,Mason,Davis,contact67@novadynamics.com,Procurement Lead,True,2026-04-07,5
+CON068,ACC033,Sofia,Burke,contact68@orbittechnologies.com,COO,True,2026-04-28,3
+CON069,ACC033,Alex,Rossi,contact69@orbittechnologies.com,Procurement Lead,False,2026-03-18,1
+CON070,ACC033,Anna,Bradley,contact70@orbittechnologies.com,Operations Manager,False,2026-02-26,3
+CON071,ACC034,Priya,Müller,contact71@paragonsystems.com,IT Director,True,2026-05-07,2
+CON072,ACC034,Logan,Kim,contact72@paragonsystems.com,Head of Technology,False,2026-04-30,1
+CON073,ACC034,Alex,Burke,contact73@paragonsystems.com,IT Director,False,2026-04-22,2
+CON074,ACC035,Isabella,Bradley,contact74@quartzanalytics.com,CEO,True,2026-03-05,5
+CON075,ACC035,David,Mills,contact75@quartzanalytics.com,VP Engineering,False,2026-04-24,5
+CON076,ACC036,Logan,Rossi,contact76@radiantcorp.com,Head of Technology,True,2026-05-05,10
+CON077,ACC037,Sofia,Mills,contact77@sapphiresolutions.com,CFO,True,2026-05-05,7
+CON078,ACC038,Lisa,Davis,contact78@titanworks.com,IT Manager,True,2026-04-25,9
+CON079,ACC038,Isabella,Rossi,contact79@titanworks.com,CTO,False,2026-05-07,9
+CON080,ACC039,Priya,Kim,contact80@unitylabs.com,CFO,True,2026-04-20,10
+CON081,ACC039,Isabella,Davis,contact81@unitylabs.com,COO,False,2026-04-03,7
+CON082,ACC039,Emma,Johnson,contact82@unitylabs.com,IT Director,False,2026-05-01,8
+CON083,ACC040,Alex,Patel,contact83@valorsystems.com,CFO,True,2026-04-29,7
+CON084,ACC040,Karen,Johnson,contact84@valorsystems.com,IT Director,False,2026-05-04,10
+CON085,ACC041,Mason,Burke,contact85@warptechnologies.com,CEO,True,2026-04-14,7
+CON086,ACC041,Logan,Kim,contact86@warptechnologies.com,COO,False,2026-05-03,7
+CON087,ACC041,David,Turner,contact87@warptechnologies.com,COO,False,2026-04-27,10
+CON088,ACC042,Logan,Wei,contact88@xenoncorp.com,VP Engineering,True,2026-04-24,3
+CON089,ACC043,Roberto,Wei,contact89@yielddynamics.com,IT Director,True,2026-05-01,6
+CON090,ACC043,David,Kim,contact90@yielddynamics.com,Head of Technology,False,2026-03-04,7
+CON091,ACC043,Ethan,Kim,contact91@yielddynamics.com,Operations Manager,False,2026-03-19,6
+CON092,ACC044,Logan,Singh,contact92@zephyrsolutions.com,VP Engineering,True,2026-05-08,5
+CON093,ACC044,Noah,Johnson,contact93@zephyrsolutions.com,CFO,False,2026-04-19,6
+CON094,ACC044,Alex,Rossi,contact94@zephyrsolutions.com,Procurement Lead,False,2026-03-27,7
+CON095,ACC045,Mason,Kim,contact95@blueshiftlabs.com,IT Manager,True,2026-03-17,3
+CON096,ACC045,Sofia,Burke,contact96@blueshiftlabs.com,IT Manager,False,2026-04-27,2
+CON097,ACC046,Chen,Davis,contact97@crestviewsystems.com,CTO,True,2026-05-02,6
+CON098,ACC046,Sofia,Patel,contact98@crestviewsystems.com,VP Engineering,False,2026-02-28,6
+CON099,ACC046,Ava,Rossi,contact99@crestviewsystems.com,IT Manager,False,2026-04-06,5
+CON100,ACC047,Olivia,Wilson,contact100@deltaforcecorp.com,VP Engineering,True,2026-04-15,4
+CON101,ACC047,Roberto,Kim,contact101@deltaforcecorp.com,Head of Technology,False,2026-04-05,3
+CON102,ACC048,Roberto,Johnson,contact102@emberanalytics.com,CFO,True,2026-03-04,4
+CON103,ACC048,Ethan,Müller,contact103@emberanalytics.com,CTO,False,2026-03-05,5
+CON104,ACC048,Alex,Wei,contact104@emberanalytics.com,IT Director,False,2026-04-24,4
+CON105,ACC049,Anna,Burke,contact105@frontiertech.com,VP Engineering,True,2026-02-28,3
+CON106,ACC050,Lisa,Turner,contact106@granitesolutions.com,IT Manager,True,2026-04-19,9

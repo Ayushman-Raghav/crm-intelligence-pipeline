@@ -1,0 +1,129 @@
+# =============================================================
+# CRM Intelligence Pipeline — .gitignore
+# =============================================================
+
+# --------------------------
+# Environment & Secrets
+# --------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# --------------------------
+# Python
+# --------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --------------------------
+# Virtual Environments
+# --------------------------
+venv/
+env/
+ENV/
+.venv/
+.env/
+pyvenv.cfg
+
+# --------------------------
+# Pipeline Output (runtime artifacts)
+# --------------------------
+data/output/
+*.report.json
+
+# --------------------------
+# ChromaDB Cache & Data
+# --------------------------
+chroma_db/
+.chroma/
+chroma-data/
+*.tar.gz
+/root/.cache/chroma/
+
+# --------------------------
+# Docker
+# --------------------------
+.dockerignore
+
+# --------------------------
+# Jupyter Notebooks
+# --------------------------
+.ipynb_checkpoints
+*.ipynb
+
+# --------------------------
+# IDEs & Editors
+# --------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# --------------------------
+# OS Files
+# --------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --------------------------
+# Logs
+# --------------------------
+*.log
+logs/
+log/
+
+# --------------------------
+# Test & Coverage
+# --------------------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# --------------------------
+# Distribution / Packaging
+# --------------------------
+*.manifest
+*.spec

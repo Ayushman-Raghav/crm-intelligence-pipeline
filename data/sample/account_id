@@ -1,0 +1,11 @@
+contact_id,account_id,first_name,last_name,email,role,is_primary,last_contacted_date,nps_score
+CON001,ACC001,James,Wilson,james.wilson@acme.com,CTO,true,2024-01-10,7
+CON002,ACC001,Lisa,Park,lisa.park@acme.com,IT Manager,false,2024-01-02,6
+CON003,ACC002,Roberto,Ferretti,r.ferretti@globex.com,CEO,true,2023-12-15,3
+CON004,ACC002,Anna,Schmidt,a.schmidt@globex.com,Operations Director,false,2023-12-20,4
+CON005,ACC003,David,Moore,d.moore@initech.com,VP Engineering,true,2024-01-12,9
+CON006,ACC004,Priya,Nair,p.nair@umbrella.com,IT Director,true,2023-12-01,2
+CON007,ACC005,Tom,Bradley,t.bradley@hooli.com,CTO,true,2024-01-05,6
+CON008,ACC006,Chen,Wei,c.wei@massive.com,Head of Technology,true,2024-01-13,8
+CON009,ACC007,Karen,Mills,k.mills@soylent.com,Operations Manager,true,2023-11-20,3
+CON010,ACC008,Alex,Turner,a.turner@cyberdyne.com,IT Manager,true,2024-01-08,5
